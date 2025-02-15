@@ -1,0 +1,10 @@
+{
+  "fire_stations": [
+    { "id": 1, "location": [0, 0], "name": "Station One" },
+    { "id": 2, "location": [25, 10], "name": "Station Two" }
+  ],
+  "police_stations": [
+    { "id": 3, "location": [10, 20], "name": "PD Central" }
+  ],
+  "ems_stations": []
+}
