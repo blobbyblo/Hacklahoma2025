@@ -1,7 +1,7 @@
 """
 Shapes for FastAPI schemas.
 """
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
 from typing import Tuple, Optional
 
 class EmergencySchema(BaseModel):
