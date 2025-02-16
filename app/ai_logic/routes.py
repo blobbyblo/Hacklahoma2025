@@ -39,3 +39,10 @@ def do_dispatch():
   global ACTIVE_EMERGENCIES, RESOURCES
   assignments = dispatch_logic(ACTIVE_EMERGENCIES, RESOURCES)
   return {"assignments": assignments}
+
+@router.post("/ping")
+def is_alive():
+  """
+  Alive check.
+  """
+  return {"message": "Yes"}
