@@ -24,7 +24,7 @@ def dispatch_logic(
     new_emergencies: List[EmergencySchema],
     resources: List[ResourceSchema]
 ) -> List[Dict]:
-  assignments = ()
+  assignments = []
   res_dict = {r.id: r for r in resources}
 
   global UNHANDLED_EMERGENCIES
