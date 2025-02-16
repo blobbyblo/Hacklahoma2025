@@ -19,7 +19,8 @@ def add_emergency(emergencies: List[EmergencySchema]):
   Endpoint to add or update emergencies in memory.
   """
   global ACTIVE_EMERGENCIES
-  ACTIVE_EMERGENCIES.extend(emergencies)
+  ACTIVE_EMERGENCIES.append(emergencies)
+  print(f"DEBUG: Emergencies updated: {len(emergencies)}")
   return {"message": "Emergencies received.", "count": len(emergencies)}
 
 @router.post("/resources")
@@ -29,6 +30,7 @@ def update_resources(resources: List[ResourceSchema]):
   """
   global RESOURCES
   RESOURCES = resources
+  print(f"DEBUG: DResources updated: {len(resources)}")
   return {"message": "Resources updated.", "count": len(resources)}
 
 @router.post("/dispatch")
@@ -38,6 +40,7 @@ def do_dispatch():
   """
   global ACTIVE_EMERGENCIES, RESOURCES
   assignments = dispatch_logic(ACTIVE_EMERGENCIES, RESOURCES)
+  print(f"DEBUG: Dispatch assignments: {len(assignments)}")
   return {"assignments": assignments}
 
 @router.post("/ping")
