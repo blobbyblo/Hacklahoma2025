@@ -15,7 +15,7 @@ TIME_WEIGHT = 0.1
 
 def calculate_priority(emergency: EmergencySchema):
   if emergency.severity >= 6:
-    return float('-oof')
+    return float('-inf')
 
   elapsed_time = time.time() - emergency.timestamp
   return - (SEVERITY_WEIGHT * emergency.severity + TIME_WEIGHT * elapsed_time)
