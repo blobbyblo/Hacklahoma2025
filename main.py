@@ -6,9 +6,8 @@ from app import config
 
 app = FastAPI(title="Assistant Dispatcher", debug=config.DEBUG)
 
-# Include AI-related routes under a prefix, e.g. /ai
 app.include_router(ai_routes.router, prefix="/ai")
 
 if __name__ == "__main__":
   import uvicorn
-  uvicorn.run("main:app", host="127.0.0.1", port=config.PORT, reload=True)
+  uvicorn.run("main:app", host=config.HOST, port=config.PORT, reload=True)
